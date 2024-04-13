@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = inputs: {
+  outputs = {inputs, darwin}: {
     nixosConfigurations = {
       myNixOS = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -21,6 +21,20 @@
         };
       };
     };
+    darwinConfigurations = {
+      fraim = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+
+        modules = [
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      }
+    }
+
     homeConfigurations = {
       nixHome = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs {
