@@ -22,9 +22,8 @@
       };
     };
     darwinConfigurations = {
-      fraim = darwin.lib.darwinSystem {
+      myDarwin = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-
         modules = [
           inputs.home-manager.darwinModules.home-manager
           {
