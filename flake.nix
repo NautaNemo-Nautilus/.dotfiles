@@ -39,7 +39,7 @@
     homeConfigurations = {
       osxHome = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs {
-          system = "darwin";
+          system = "aarch64-darwin";
           config.allowUnfree = true;
           overlays = [(import inputs.rust-overlay)];
         };

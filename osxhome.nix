@@ -3,7 +3,6 @@
     ./zsh.nix
     ./starship.nix
     ./development.nix
-    ./browser.nix
     ./vim.nix
   ];
   home = rec {
