@@ -26,7 +26,7 @@
       };
     };
     darwinConfigurations = {
-      myDarwin = inputs.nix-darwin.lib.darwinSystem {
+      myDarwin = inputs.nixpkgs.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           inputs.home-manager.darwinModules.home-manager
