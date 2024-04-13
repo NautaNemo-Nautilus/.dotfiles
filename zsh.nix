@@ -3,7 +3,7 @@
     enable = true;
     autocd = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     history.size = 10000;
   };
