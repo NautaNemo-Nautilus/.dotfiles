@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = inputs: {
+  outputs = {inputs, darwin}: {
     nixosConfigurations = {
       myNixOS = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
