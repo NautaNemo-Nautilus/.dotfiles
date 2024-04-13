@@ -35,6 +35,9 @@
             inputs.home-manager.useUserPackages = true;
           }
         ];
+        specialArgs = {
+          inherit inputs;
+        };
       };
     };
 
