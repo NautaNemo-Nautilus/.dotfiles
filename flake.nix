@@ -30,10 +30,10 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-          }
+          };
         ];
-      }
-    }
+      };
+    };
 
     homeConfigurations = {
       nixHome = inputs.home-manager.lib.homeManagerConfiguration {
