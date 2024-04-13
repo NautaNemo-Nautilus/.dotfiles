@@ -26,10 +26,10 @@
         system = "aarch64-darwin";
 
         modules = [
-          home-manager.darwinModules.home-manager
+          inputs.home-manager.darwinModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            inputs.home-manager.useGlobalPkgs = true;
+            inputs.home-manager.useUserPackages = true;
           }
         ];
       };
