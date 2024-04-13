@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    rust-overlay.url = "github:oxalica/rust-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,16 +22,32 @@
       };
     };
     homeConfigurations = {
-      myHome = inputs.home-manager.lib.homeManagerConfiguration {
+      nixHome = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
+          overlays = [(import inputs.rust-overlay)];
         };
         extraSpecialArgs = {
           inherit inputs;
         };
         modules = [
-          ./home.nix
+          ./nixhome.nix
+        ];
+      };
+    };
+    homeConfigurations = {
+      osxHome = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = import inputs.nixpkgs {
+          system = "darwin";
+          config.allowUnfree = true;
+          overlays = [(import inputs.rust-overlay)];
+        };
+        extraSpecialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./osxhome.nix
         ];
       };
     };

@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    gcc python312
+    gcc python312 rust-bin.stable.latest.default 
   ];
 }
