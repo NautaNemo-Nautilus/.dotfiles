@@ -31,8 +31,10 @@
         modules = [
           inputs.home-manager.darwinModules.home-manager
           {
+          
             inputs.home-manager.useGlobalPkgs = true;
             inputs.home-manager.useUserPackages = true;
+          
           }
         ];
       };
