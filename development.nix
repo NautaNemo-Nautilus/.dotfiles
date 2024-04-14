@@ -1,9 +1,13 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    gcc 
+    # C
+    gcc
+    # Python 
     python312 
+    # Haskell
     ghc
-
+    
+    # Rust
     rust-bin.stable.latest.default 
   ];
 }
