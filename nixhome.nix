@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./wezterm.nix
     ./zsh.nix
     ./starship.nix
     ./development.nix
