@@ -2,6 +2,7 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      vim-airline
       iceberg-vim
     ];
     settings = { ignorecase = true; };
