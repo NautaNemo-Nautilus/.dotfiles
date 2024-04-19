@@ -77,6 +77,10 @@
         Unknown = " ";
         Windows = " ";
       };
+      os.format = "[$symbol]($style)";
+      os.style = "bg:#a3aed2 fg:#090c0c";
+      os.disabled = false;
+
       package.symbol = " ";
       python.symbol = " ";
       rlang.symbol = "ﳒ ";

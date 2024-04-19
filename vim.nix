@@ -2,8 +2,18 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      # setting nix
+      vim-nix
+
+      # appearance
       vim-airline
+      vim-airline-themes
       iceberg-vim
+
+      # Editer-IDE
+      unite-vim
+      supertab
+      vim-polyglot
     ];
     settings = { ignorecase = true; };
     extraConfig = ''
@@ -27,9 +37,16 @@
       set splitbelow
       set t_Co=256
       "set termguicolors
-
+      
+      " Color Scheme setting
       colorscheme iceberg
 
+      " Plugin-Airline setting
+      let g:airline_theme='minimalist'
+      let g:airline#extensions#tabline#enabled = 1
+      let g:airline_powerline_fonts = 1
+
+      
     '';
   };
 }
