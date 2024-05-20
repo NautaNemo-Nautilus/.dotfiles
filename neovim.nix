@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   programs.neovim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [
-      # setting nix
-    ];
+    #plugins = with pkgs.vimPlugins; [
+    #  # setting nix
+    #];
     extraConfig = ''
       syntax enable
       
