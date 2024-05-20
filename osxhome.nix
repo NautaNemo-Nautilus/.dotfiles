@@ -5,9 +5,10 @@
     ./starship.nix
     ./development.nix
     ./vim.nix
+    ./neovim.nix
   ];
   home = rec {
-    username = "mogidaiki";
+    username = "user";
     homeDirectory = "/Users/${username}";
     stateVersion = "22.11";
   };

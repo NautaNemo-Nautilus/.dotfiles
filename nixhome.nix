@@ -6,6 +6,7 @@
     ./development.nix
     ./browser.nix
     ./vim.nix
+    ./neovim.nix
     
   ];
   home = rec {
