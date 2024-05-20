@@ -4,7 +4,6 @@
     plugins = with pkgs.vimPlugins; [
       # setting nix
     ];
-    settings = { ignorecase = true; };
     extraConfig = ''
       syntax enable
       
