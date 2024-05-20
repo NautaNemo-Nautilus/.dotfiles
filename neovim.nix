@@ -1,6 +1,20 @@
 {pkgs, ...}: {
   programs.neovim = {
     enable = true;
+    plugins = with pkgs.vimPlugins; [
+      # setting nix
+      vim-nix
+
+      # appearance
+      vim-airline
+      vim-airline-themes
+      iceberg-vim
+
+      # Editer-IDE
+      unite-vim
+      supertab
+      vim-polyglot
+    ];
     #plugins = with pkgs.vimPlugins; [
     #  # setting nix
     #];
