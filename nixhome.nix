@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./environment.nix
     ./wezterm.nix
     ./zsh.nix
     ./starship.nix
@@ -11,10 +10,6 @@
     
   ];
   
-  wayland.windowManager.sway = {
-    enable = true;
-  };
-
   home = rec {
     username = "nautanemo";
     homeDirectory = "/home/${username}";
