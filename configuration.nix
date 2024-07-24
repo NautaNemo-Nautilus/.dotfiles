@@ -48,20 +48,55 @@
   #services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = false;
-  services.xserver.desktopManager.plasma5.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
   
-  #
-  hardware.opengl.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
+  #services.xserver = {
+  #  layout = "us";
+  #  xkbVariant = "";
+  #}
 
+  security.polkit.enable = true;
+  # Graphics
+  services.xserver = {
+    enable = true;
+    resolutions = [{ x = 1920; y = 1080; }];
+    virtualScreen = { x = 1920; y = 1080; };
+    layout = "us";
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+    };
+    displayManagr.defaultSession = "xfce";
+    autorun = true;
+    libinput.enable = true;
+  };
+  
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [
+      swaylock
+      swayidle
+      wl-clipboard
+      dmenu
+    ];
+    extraSessionCommands = ''
+      export SDL_VIDEODRIVER=wayland
+      export QT_QPA_PLATFORM=wayland
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+      export MOZ_ENABLE_WAYLAND=1
+    '';
+  };
+  
+  programs.waybar.enable = true;
+  
+  programs.qt5ct.enable = true;
+
+  
+  hardware.opengl.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -108,8 +143,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
   ];
-
-  security.polkit.enable = true;
+  
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
