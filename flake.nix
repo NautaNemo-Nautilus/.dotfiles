@@ -58,7 +58,6 @@
   #  });
   #};
   
-  pkgs = nixpkgs.legacyPackages.${system};
   outputs = inputs: {
     nixosConfigurations = {
       myNixOS = inputs.nixpkgs.lib.nixosSystem {
