@@ -10,4 +10,5 @@
       options = "--delete-order.than 7d";
     };
   };
+  nixpkgs.config.allowUnfree = true;
 }
