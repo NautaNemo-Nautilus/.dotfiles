@@ -1,7 +1,7 @@
 {...}: {
   boot = {
     loader = {
-      systemd.boot = true;
+      systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
     # Avoid touchpad click to tap (clickpad) bug. For more detail see:
