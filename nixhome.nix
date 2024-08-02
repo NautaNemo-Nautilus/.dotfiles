@@ -1,14 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./desktopEnvironment.nix
-    ./wezterm.nix
-    ./zsh.nix
-    ./starship.nix
-    ./development.nix
-    ./browser.nix
-    ./vim.nix
-    ./neovim.nix
-        
+    ./packages/configs
   ];
   
   home = rec {
