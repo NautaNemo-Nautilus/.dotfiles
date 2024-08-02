@@ -6,6 +6,5 @@
       ./nixos
       ./packages
       ./settings.nix
-    ]
-  ]);
+    ];
 }
