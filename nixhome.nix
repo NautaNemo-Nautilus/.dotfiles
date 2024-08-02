@@ -1,10 +1,11 @@
 {pkgs, ...}: {
   imports = [
+    ./nixos/desktop/configs
     ./packages/configs
   ];
   
   home = rec {
-    username = "nautanemo";
+    username = "user";
     homeDirectory = "/home/${username}";
     stateVersion = "22.11";
   };
