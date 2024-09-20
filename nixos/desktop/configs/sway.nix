@@ -11,6 +11,7 @@
           "command" = "${pkgs.waybar}/bin/waybar"; # Using WayBar
         }
       ];
+
       startup = [
         # Launch Firefox on start
         {command = "firefox";}

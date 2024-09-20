@@ -3,7 +3,7 @@
     git.enable = true;
     vim.defaultEditor = true;
     zsh = {
-      enabled = true;
+      enable = true;
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
